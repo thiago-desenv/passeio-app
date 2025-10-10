@@ -9,6 +9,16 @@
       "id": "3",
       "nome": "Shoppings grandes",
       "descricao": "para fazer compras e passear"
+    },
+    {
+      "id": "bb0d",
+      "nome": "Bar do seu zé",
+      "descricao": "Melhor bar da região que serve café da manhã, almoço e janta."
+    },
+    {
+      "id": "07c7",
+      "nome": "Bar da Dona Maria",
+      "descricao": "Tem o melhor pastel da região"
     }
   ]
 }

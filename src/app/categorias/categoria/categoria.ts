@@ -11,7 +11,7 @@ import { CategoriaService } from '../services/categoria';
 export class Categoria {
   camposForm: FormGroup;
 
-  constructor(private categoria: CategoriaService) {
+  constructor(private service: CategoriaService) {
     this.camposForm = new FormGroup({
       nome: new FormControl('', Validators.required),
       descricao: new FormControl('', Validators.required)
@@ -22,7 +22,12 @@ export class Categoria {
     this.camposForm.markAllAsTouched();
 
     if(this.camposForm.valid) {
-      console.log('Valores digitados: ', this.camposForm.value);
+      this.service.salvar(this.camposForm.value).subscribe({
+        next: categoria => {
+          this.camposForm.reset();
+        },
+        error: erro => console.log('Ocorreu um erro', erro)
+      });
     }
   }
 
