@@ -1,9 +1,14 @@
 {
   "categorias": [
     {
-      "id": "1",
-      "nome": "Restaurantes",
-      "descricao": "Lugares para alimentação"
+      "id": "2",
+      "nome": "Bares",
+      "descricao": "Zé neco"
+    },
+    {
+      "id": "3",
+      "nome": "Shoppings grandes",
+      "descricao": "para fazer compras e passear"
     }
   ]
 }
