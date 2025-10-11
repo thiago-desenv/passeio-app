@@ -2,8 +2,50 @@
   <h2 class="text-2x1 font-semibold text-gray-700 mg-4">Novo lugares</h2>
   <hr/>
 
-  <form id="lugarForm">
+  <form id="lugarForm" [formGroup]="camposForm" (ngSubmit)="salvar()">
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="nome">Nome do lugar</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        formControlName="nome"
+        placeholder="Ex: Praia do Sol, Restautante Estrela"
+        class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
+      />
+    </div>
 
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="categoria">Categoria</label>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="localizacao">Localização</label>
+      <input
+        type="text"
+        id="localizacao"
+        name="localizacao"
+        formControlName="localizacao"
+        placeholder="Ex: São paulo, Rio de Janeiro, etc."
+        class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="urlFoto">URL da foto</label>
+      <input
+        type="text"
+        id="urlFoto"
+        name="urlFoto"
+        formControlName="urlFoto"
+        placeholder="Ex: https://exemplo.com/foto.jpg"
+        class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="avaliacao">Avaliação</label>
+    </div>
   </form>
 
   <button type="submit" class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">
