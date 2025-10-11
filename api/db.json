@@ -19,6 +19,11 @@
       "id": "07c7",
       "nome": "Bar da Dona Maria",
       "descricao": "Tem o melhor pastel da região"
+    },
+    {
+      "id": "2c74",
+      "nome": "Restaurante do Kuririn",
+      "descricao": "Comida boa a qualquer hora"
     }
   ]
 }
