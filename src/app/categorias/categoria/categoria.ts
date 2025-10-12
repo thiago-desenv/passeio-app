@@ -26,7 +26,7 @@ export class Categoria {
         next: categoria => {
           this.camposForm.reset();
         },
-        error: erro => console.log('Ocorreu um erro', erro)
+        error: erro => console.log('Ocorreu um erro ao salvar a categoria', erro)
       });
     }
   }

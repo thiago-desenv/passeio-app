@@ -17,6 +17,15 @@
 
     <div class="mb-4">
       <label class="block text-gray-600 font-medium mb-2" for="categoria">Categoria</label>
+      <select
+        name="categoria"
+        id="categoria"
+        formControlName="categoria"
+        class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+      >
+      <option [value]="">Selecione uma categoria</option>
+      <option *ngFor="let cat of categorias" [value]="cat.nome">{{ cat.nome }}</option>
+      </select>
     </div>
 
     <div class="mb-4">
