@@ -11,6 +11,9 @@ import { CategoriaService } from '../../categorias/services/categoria';
   styleUrl: './galeria.scss'
 })
 export class Galeria implements OnInit {
+  lugares: Lugar[] = [];
+  categorias: Categoria[] = [];
+
   constructor(
     private serviceLugares: LugarService,
     private serviceCategoria: CategoriaService
@@ -28,6 +31,9 @@ export class Galeria implements OnInit {
     });
   }
 
-  lugares: Lugar[] = [];
-  categorias: Categoria[] = [];
+  getEstrelas(lugar: Lugar): string {
+    const qtdEstrelaCheia = '&#9733;'.repeat(lugar.avaliacao || 0);
+    const qtdEstrelaVazia = '&#9734;'.repeat(5 - (lugar.avaliacao || 0));
+    return qtdEstrelaCheia + qtdEstrelaVazia;
+  }
 }
