@@ -48,8 +48,16 @@
       "nome": "Bar do var",
       "categoria": "Bares",
       "localizacao": "dsds",
-      "urlFoto": "teste",
+      "urlFoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTlp9SFqkyo3IJNlaEpkITOg2jxnSH8P6DlA&s",
       "avaliacao": "1"
+    },
+    {
+      "id": "53d4",
+      "nome": "Bar do Tião",
+      "categoria": "Bares",
+      "localizacao": "Tocantins",
+      "urlFoto": "https://portalbelohorizonte.com.br/sites/default/files/arquivos/bares-com-alma/bares/bar-do-daniel/mz7_0598.jpg",
+      "avaliacao": "3"
     }
   ]
 }

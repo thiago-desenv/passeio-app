@@ -11,3 +11,18 @@
     </select>
   </div>
 </div>
+
+<div id="lugaresList" class="p-4 grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-white shadow rounded overflow-hidden" *ngFor="let lugar of lugares">
+    <img [src]="lugar.urlFoto" [alt]="lugar.nome" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <h2 class="text-lg font-semibold">{{ lugar.nome }}</h2>
+        <p class="text-gray-500">Categoria: <span class="text-blue-600">{{ lugar.categoria }}</span></p>
+        <p class="text-gray-500">Localização: <span class="text-blue-600">{{ lugar.localizacao }}</span></p>
+        <div class="mt-2 flex items-center">
+          <span class="text-yellow-500">Estrelas</span>
+          <span class="ml-2 text-gray-600">{{ lugar.avaliacao }}</span>
+        </div>
+    </div>
+  </div>
+</div>
