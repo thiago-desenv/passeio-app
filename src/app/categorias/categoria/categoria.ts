@@ -23,7 +23,7 @@ export class Categoria {
 
     if(this.camposForm.valid) {
       this.service.salvar(this.camposForm.value).subscribe({
-        next: categoria => {
+        next: () => {
           this.camposForm.reset();
         },
         error: erro => console.log('Ocorreu um erro ao salvar a categoria', erro)

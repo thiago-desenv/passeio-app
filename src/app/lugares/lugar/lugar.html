@@ -13,6 +13,7 @@
         placeholder="Ex: Praia do Sol, Restautante Estrela"
         class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
       />
+      <span class="text-red-500 text-sm" *ngIf="isCampoInvalido('nome')">Campo obrigatório</span>
     </div>
 
     <div class="mb-4">
@@ -26,6 +27,7 @@
       <option [value]="">Selecione uma categoria</option>
       <option *ngFor="let cat of categorias" [value]="cat.nome">{{ cat.nome }}</option>
       </select>
+      <span class="text-red-500 text-sm" *ngIf="isCampoInvalido('categoria')">Campo obrigatório</span>
     </div>
 
     <div class="mb-4">
@@ -38,6 +40,7 @@
         placeholder="Ex: São paulo, Rio de Janeiro, etc."
         class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
       />
+      <span class="text-red-500 text-sm" *ngIf="isCampoInvalido('localizacao')">Campo obrigatório</span>
     </div>
 
     <div class="mb-4">
@@ -50,6 +53,7 @@
         placeholder="Ex: https://exemplo.com/foto.jpg"
         class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
       />
+      <span class="text-red-500 text-sm" *ngIf="isCampoInvalido('urlFoto')">Campo obrigatório</span>
     </div>
 
     <div class="mb-4">
@@ -67,6 +71,7 @@
       <option [value]="4">4 - Muito bom</option>
       <option [value]="5">5 - Excelente</option>
       </select>
+      <span class="text-red-500 text-sm" *ngIf="isCampoInvalido('avaliacao')">Campo obrigatório</span>
     </div>
 
   <button type="submit" class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">
