@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Lugar } from '../lugar';
@@ -15,5 +15,22 @@ export class LugarService {
 
   obter(): Observable<Lugar[]> {
     return this.http.get<Lugar[]>('http://localhost:3000/lugares');
+  }
+
+  obterLugaresFiltrado(nome: string, categoria: string): Observable<Lugar[]> {
+    let params = new HttpParams();
+    if(nome) {
+      params = params.set('nome_like', nome);
+    }
+
+    if(categoria) {
+      params = params.set('categoria', categoria);
+    }
+
+    console.log('Parâmetros requisição', params);
+
+    return this.http.get<Lugar[]>('http://localhost:3000/lugares', {
+      params: params
+    });
   }
 }

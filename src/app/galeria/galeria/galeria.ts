@@ -13,6 +13,8 @@ import { CategoriaService } from '../../categorias/services/categoria';
 export class Galeria implements OnInit {
   lugares: Lugar[] = [];
   categorias: Categoria[] = [];
+  nomeFiltro: string = '';
+  categoriaFiltro: string = '';
 
   constructor(
     private serviceLugares: LugarService,
@@ -35,5 +37,12 @@ export class Galeria implements OnInit {
     const qtdEstrelaCheia = '&#9733;'.repeat(lugar.avaliacao || 0);
     const qtdEstrelaVazia = '&#9734;'.repeat(5 - (lugar.avaliacao || 0));
     return qtdEstrelaCheia + qtdEstrelaVazia;
+  }
+
+  obterLugaresFiltrado() {
+    this.serviceLugares.obterLugaresFiltrado(this.nomeFiltro, this.categoriaFiltro).subscribe({
+      next: lugares => this.lugares = lugares,
+      error: erro => console.log('Ocorreu um erro ao obter os lugares filtrados', erro)
+    });
   }
 }
