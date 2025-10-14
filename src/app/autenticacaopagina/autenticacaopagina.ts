@@ -1,3 +1,4 @@
+import { Authgoogle } from './../authgoogle';
 import { Component } from '@angular/core';
 import { Profile } from './profile.model';
 import { Router } from '@angular/router';
@@ -11,17 +12,20 @@ import { Router } from '@angular/router';
 export class Autenticacaopagina {
   profile: Profile | undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authgoogle: Authgoogle) { }
 
   navegar() {
     this.router.navigate(['/paginas/galeria']);
   }
 
   logar() {
-
+    //this.authgoogle.login();
   }
 
   isLogado(): boolean {
+    const dadosGoogle = this.authgoogle.getLoggedProfile()
+    console.log('Dados google', dadosGoogle);
+    this.profile = dadosGoogle;
     return !!this.profile;
   }
 }
